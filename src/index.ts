@@ -13,7 +13,7 @@ const app = new App({
 
 const s3 = new S3();
 
-app.message(subtype("file_share"), async ({ event, say, client }) => {
+app.message(subtype("file_share"), async ({ event, client }) => {
   if ("files" in event) {
     await Promise.all(
       event.files.map(async ({ url_private, name, mimetype }) => {
